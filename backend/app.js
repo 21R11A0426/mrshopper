@@ -11,7 +11,7 @@ connectDb();
 app.use(cors({
     origin: [
         "http://localhost:5173",               
-        "https://mrshopper.vercel.app/"
+        "https://mrshopper.vercel.app"
     ],
   credentials: true
 }))
