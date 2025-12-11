@@ -19,7 +19,11 @@ app.use('/',productRouter);
 app.get('/',(req,res)=>{
     res.send('hi');
 })
-app.listen(port,()=>{
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, () => {
+        console.log(`listening at port ${port}`);
+    });
+}
 
-    console.log(`listening at port ${port}`);
-})
+
+module.exports = app;
