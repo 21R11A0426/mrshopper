@@ -7,6 +7,8 @@ It enables users to list products for sale, edit details, delete items, and view
 ---
 ![MrShopper Landing Page](./mrshopper.png)
 
+## 🌐 Live Demo
+**🔗 Public URL:** https://mrshopper.vercel.app/
 ## 🎥 Demo & Explanation Video
 [Demo Video!](https://drive.google.com/file/d/1iQXcXTXQAyRkeDGis-NinB25E_IxOPwq/view?usp=sharing)  
 
