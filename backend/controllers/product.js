@@ -87,7 +87,13 @@ module.exports.deleteProduct=async (req, res) => {
 };
 module.exports.getProduct = async (req, res) => {
     try {
-        const product = await Product.findById(req.params.id).populate('user', 'username');
+        const { id } = req.params;
+
+ 
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            return res.status(404).json({ message: "Invalid Product ID" });
+        }
+        const product = await Product.findById(id).populate('user', 'username');
 
         if (!product) {
             return res.status(404).json({ success: false, message: "Product not found" });
