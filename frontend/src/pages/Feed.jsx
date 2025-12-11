@@ -14,15 +14,15 @@ const Feed = () => {
   const queryClient = useQueryClient();
   const { authUser } = useAuthUser();
 
-  // 1. Fetch All Products
+
   const { data: products, isLoading, isError } = useQuery({
     queryKey: ['products'],
     queryFn: getProducts,
   });
 
-  // 2. Filter: Show ONLY products belonging to the current user
+ 
   const myProducts = products?.data?.filter(product => {
-    // Handle cases where product.user is populated object OR just an ID string
+
     const ownerId = product.user?._id || product.user;
     return authUser?._id && ownerId === authUser._id;
   });
@@ -120,7 +120,7 @@ const Feed = () => {
 
       <Container maxWidth={false} sx={{ mt: 4, mb: 5, px: { xs: 2, md: 8 } }}>
         
-        {/* Header Section */}
+        
         <Box sx={{ mb: 4, borderBottom: '1px solid #eee', pb: 2 }}>
           <Typography variant="h4" sx={{ fontWeight: 'bold', color: 'black' }}>
             My <span style={{ color: '#D50000' }}>Products</span>
@@ -130,7 +130,7 @@ const Feed = () => {
           </Typography>
         </Box>
 
-        {/* Product Grid */}
+
         <Box
           sx={{
             display: 'flex',

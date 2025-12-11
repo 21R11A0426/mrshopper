@@ -19,9 +19,9 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
     <Card
       elevation={0}
       sx={{
-        width: '100%',              // ✅ fills Grid item width
-        height: '100%',             // ✅ allows equal height per row
-        minHeight: 360,             // ✅ uniform card height feel
+        width: '100%',              
+        height: '100%',             
+        minHeight: 360,             
         display: 'flex',
         flexDirection: 'column',
         borderRadius: '16px',
@@ -31,7 +31,7 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
         '&:hover': { transform: 'translateY(-4px)' },
       }}
     >
-      {/* ✅ Fixed image container height so all cards look identical */}
+ 
       <Box sx={{ height: 220, width: '100%', overflow: 'hidden' }}>
         <CardMedia
           component="img"
@@ -40,7 +40,7 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
           sx={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover',       // ✅ crops different image sizes
+            objectFit: 'cover',       
             objectPosition: 'center',
           }}
         />
@@ -48,7 +48,7 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
 
       <CardContent sx={{ px: 2, pt: 2, pb: 1 }}>
         <Stack spacing={0.8}>
-          {/* ✅ Title (1-line clamp to prevent height changes) */}
+
           <Typography
             variant="subtitle1"
             sx={{
@@ -64,7 +64,7 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
             {product.name}
           </Typography>
 
-          {/* ✅ Price + /item + Quantity with grey styling */}
+   
           <Typography
             variant="body1"
             sx={{ fontWeight: 'bold', fontSize: '1rem', color: '#1a1a1a' }}
@@ -79,7 +79,7 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
             </span>
           </Typography>
 
-          {/* ✅ Optional description (2-line clamp) */}
+
           {product.description ? (
             <Typography
               variant="body2"
@@ -103,7 +103,6 @@ const ProductCard = ({ product, onEdit, onDelete }) => {
         <Divider />
       </Box>
 
-      {/* ✅ Actions pinned to bottom for consistent layout */}
       <CardActions sx={{ px: 2, pb: 2, pt: 1, mt: 'auto' }}>
         <Button
           size="small"

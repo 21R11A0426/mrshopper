@@ -69,7 +69,7 @@ const Navbar = () => {
                 My Products
               </Button>
               
-              {/* NEW ADD PRODUCT BUTTON IN NAVBAR */}
+          
               <Button 
                 component={Link} 
                 to="/new" 

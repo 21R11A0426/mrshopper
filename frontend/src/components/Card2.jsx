@@ -14,8 +14,8 @@ const sellerName = product.user?.name || "Unknown Seller";
     <Card
       sx={{
         width: '100%',
-        maxWidth: 330,          // ✅ uniform card width
-        minHeight: 360,         // ✅ uniform card height feel
+        maxWidth: 330,        
+        minHeight: 360,         
         display: 'flex',
         flexDirection: 'column',
         borderRadius: 3,
@@ -24,12 +24,12 @@ const sellerName = product.user?.name || "Unknown Seller";
       }}
     >
       <CardMedia
-        component="img"         // ✅ important for objectFit
-        height="200"            // ✅ fixed image height
+        component="img"        
+        height="200"           
         image={product.image || fallbackImg}
         alt={product.text}
         sx={{
-          objectFit: 'cover',   // ✅ crops any image ratio
+          objectFit: 'cover',   
           objectPosition: 'center',
         }}
       />
@@ -69,7 +69,7 @@ const sellerName = product.user?.name || "Unknown Seller";
           </Typography>
       </CardContent>
          
-      {/* ✅ push actions to bottom for consistent layout */}
+   
       <CardActions sx={{  px: 2, pb: 2 }}>
         <Button size="small" onClick={() => onEdit(product._id)}  sx={{ color: 'black', fontWeight: 700, minWidth: 'auto', mr: 2 }}>
           edit

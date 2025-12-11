@@ -6,13 +6,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import toast from 'react-hot-toast';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import useAuthUser from '../hooks/useAuthUser'; // 1. Import Auth Hook
+import useAuthUser from '../hooks/useAuthUser'; 
 
 const ProductEdit = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const { authUser } = useAuthUser(); // 2. Get current user
+  const { authUser } = useAuthUser(); 
 
   const [formData, setFormData] = useState({
     text: '', 
@@ -58,16 +58,16 @@ const ProductEdit = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // 3. AUTHORIZATION CHECK (Similar to Delete)
-    // Check if the current user is the owner of the product
+
+
     const ownerId = product?.data?.user?._id || product?.data?.user;
     const currentUserId = authUser?._id;
 
     if (!currentUserId || ownerId !== currentUserId) {
       toast.error("You are not authorized to edit this product", {
         style: {
-          background: '#fee2e2', // Light red background
-          color: '#b91c1c',       // Dark red text
+          background: '#fee2e2', 
+          color: '#b91c1c',      
           fontWeight: '500',
           border: '1px solid #fecaca'
         },
@@ -76,10 +76,10 @@ const ProductEdit = () => {
           secondary: '#fee2e2',
         },
       });
-      return; // Stop execution
+      return; 
     }
 
-    // If authorized, proceed with update
+   
     mutation.mutate(formData);
   };
 
